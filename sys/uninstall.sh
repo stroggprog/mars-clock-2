@@ -42,4 +42,4 @@ chown www-data:www-data /var/www/*.html
 
 echo "Uninstall is complete."
 echo "If you wish to delete the repository, type from the parent directory:"
-echo "rm -r mars-clock-2"
+echo "sudo rm -r mars-clock-2"
