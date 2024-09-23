@@ -1,0 +1,140 @@
+{
+    "landers": [
+        {
+            "idx": 0,
+            "lat": 11.53,
+            "lon": 90.43,
+            "code": "BEA",
+            "name": "Beagle 2",
+            "type": "lander"
+        },
+        {
+            "idx": 1,
+            "lat": 18.2,
+            "lon": 335.45,
+            "code": "E22",
+            "name": "ExoMars 2022",
+            "type": "rover"
+        },
+        {
+            "idx": 2,
+            "lat": -2.07,
+            "lon": 353.79,
+            "code": "EDM",
+            "name": "ExoMars Schiaparelli",
+            "type": "lander"
+        },
+        {
+            "idx": 3,
+            "lat": -45,
+            "lon": 47,
+            "code": "M2",
+            "name": "Mars 2",
+            "type": "lander"
+        },
+        {
+            "idx": 4,
+            "lat": 18.44462715,
+            "lon": 77.45088572,
+            "code": "M20",
+            "name": "Mars Perseverance",
+            "type": "rover"
+        },
+        {
+            "idx": 5,
+            "lat": -45,
+            "lon": 202,
+            "code": "M3",
+            "name": "Mars 3",
+            "type": "lander"
+        },
+        {
+            "idx": 6,
+            "lat": -23.9,
+            "lon": 345.58,
+            "code": "M6",
+            "name": "Mars 6",
+            "type": "lander"
+        },
+        {
+            "idx": 7,
+            "lat": -14.571892,
+            "lon": 175.47848,
+            "code": "MERA",
+            "name": "MER-A Spirit",
+            "type": "rover"
+        },
+        {
+            "idx": 8,
+            "lat": -1.9483,
+            "lon": 354.47417,
+            "code": "MERB",
+            "name": "MER-B Opportunity",
+            "type": "rover"
+        },
+        {
+            "idx": 9,
+            "lat": 19.09985,
+            "lon": 326.74576,
+            "code": "MPF",
+            "name": "Mars Pathfinder",
+            "type": "lander"
+        },
+        {
+            "idx": 10,
+            "lat": -76.1,
+            "lon": 169.7,
+            "code": "MPL",
+            "name": "Mars Polar Lander",
+            "type": "lander"
+        },
+        {
+            "idx": 11,
+            "lat": -4.589465,
+            "lon": 137.441635,
+            "code": "MSL",
+            "name": "MSL Curiosity",
+            "type": "rover"
+        },
+        {
+            "idx": 12,
+            "lat": 4.502384,
+            "lon": 135.974,
+            "code": "NSYT",
+            "name": "Mars InSight",
+            "type": "lander"
+        },
+        {
+            "idx": 13,
+            "lat": 68.21878,
+            "lon": 234.24845,
+            "code": "PHX",
+            "name": "Mars Phoenix",
+            "type": "lander"
+        },
+        {
+            "idx": 14,
+            "lat": 25.1,
+            "lon": 109.9,
+            "code": "TW1",
+            "name": "Zhurong",
+            "type": "lander"
+        },
+        {
+            "idx": 15,
+            "lat": 22.2715,
+            "lon": 312.04863,
+            "code": "VL1",
+            "name": "Viking Lander 1",
+            "type": "lander"
+        },
+        {
+            "idx": 16,
+            "lat": 47.6698,
+            "lon": 134.2803,
+            "code": "VL2",
+            "name": "Viking Lander 2",
+            "type": "lander"
+        }
+    ]
+}

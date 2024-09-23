@@ -1,0 +1,348 @@
+{
+    "places": [
+        {
+            "idx": 0,
+            "lat": -5.14,
+            "lon": 0,
+            "code": "Airy",
+            "name": "Airy Crater",
+            "type": "crater"
+        },
+        {
+            "idx": 1,
+            "lat": -5.1,
+            "lon": 0,
+            "code": "Airy-0",
+            "name": "Airy-0",
+            "type": "crater"
+        },
+        {
+            "idx": 2,
+            "lat": 41.08,
+            "lon": 249.29,
+            "code": "Alba",
+            "name": "Alba Mons",
+            "type": "surface feature"
+        },
+        {
+            "idx": 3,
+            "lat": 18.87,
+            "lon": 150.47,
+            "code": "Albo",
+            "name": "Albor Tholus",
+            "type": "surface feature"
+        },
+        {
+            "idx": 4,
+            "lat": 21.38,
+            "lon": 60.83,
+            "code": "Ant",
+            "name": "Antoniadi Crater",
+            "type": "crater"
+        },
+        {
+            "idx": 5,
+            "lat": -8.57,
+            "lon": 174.18,
+            "code": "Apo",
+            "name": "Apollinaris Patera",
+            "type": "surface feature"
+        },
+        {
+            "idx": 6,
+            "lat": -49.84,
+            "lon": 316.69,
+            "code": "Arg",
+            "name": "Argyre Planitia",
+            "type": "surface feature"
+        },
+        {
+            "idx": 7,
+            "lat": -8.26,
+            "lon": 239.91,
+            "code": "Ars",
+            "name": "Arsia Mons",
+            "type": "surface feature"
+        },
+        {
+            "idx": 8,
+            "lat": 11.92,
+            "lon": 255.92,
+            "code": "Asc",
+            "name": "Ascraeus Mons",
+            "type": "surface feature"
+        },
+        {
+            "idx": 9,
+            "lat": 23.35,
+            "lon": 32.11,
+            "code": "Cas",
+            "name": "Cassini Crater",
+            "type": "crater"
+        },
+        {
+            "idx": 10,
+            "lat": 28.43,
+            "lon": 319.69,
+            "code": "Chr",
+            "name": "Chryse Planitia",
+            "type": "surface feature"
+        },
+        {
+            "idx": 11,
+            "lat": 48.84,
+            "lon": 191.17,
+            "code": "Cop",
+            "name": "Copernicus Crater",
+            "type": "crater"
+        },
+        {
+            "idx": 12,
+            "lat": 34.56,
+            "lon": 347.67,
+            "code": "Cyd",
+            "name": "Cydonia Mensae",
+            "type": "surface feature"
+        },
+        {
+            "idx": 13,
+            "lat": -21.59,
+            "lon": 355.74,
+            "code": "Dol",
+            "name": "Dollfus Crater",
+            "type": "crater"
+        },
+        {
+            "idx": 14,
+            "lat": 25.02,
+            "lon": 147.21,
+            "code": "Ely",
+            "name": "Elysium Mons",
+            "type": "surface feature"
+        },
+        {
+            "idx": 15,
+            "lat": -36.79,
+            "lon": 3.92,
+            "code": "Gre",
+            "name": "Greeley Crater",
+            "type": "crater"
+        },
+        {
+            "idx": 16,
+            "lat": -31.29,
+            "lon": 91.86,
+            "code": "Had",
+            "name": "Hariacus Mons",
+            "type": "surface feature"
+        },
+        {
+            "idx": 17,
+            "lat": -42.43,
+            "lon": 70.5,
+            "code": "Hel",
+            "name": "Hellas Planitia",
+            "type": "surface feature"
+        },
+        {
+            "idx": 18,
+            "lat": -14.48,
+            "lon": 129.89,
+            "code": "Her",
+            "name": "Herschel Crater",
+            "type": "crater"
+        },
+        {
+            "idx": 19,
+            "lat": -13.88,
+            "lon": 55.58,
+            "code": "Huy",
+            "name": "Huygens Crater",
+            "type": "crater"
+        },
+        {
+            "idx": 20,
+            "lat": 13.94,
+            "lon": 88.38,
+            "code": "Isi",
+            "name": "Isidis Planitia",
+            "type": "surface feature"
+        },
+        {
+            "idx": 21,
+            "lat": 18.41,
+            "lon": 77.69,
+            "code": "Jez",
+            "name": "Jezero Crater",
+            "type": "crater"
+        },
+        {
+            "idx": 22,
+            "lat": -46.69,
+            "lon": 140.98,
+            "code": "Kep",
+            "name": "Kepler Crater",
+            "type": "crater"
+        },
+        {
+            "idx": 23,
+            "lat": -29.56,
+            "lon": 218.46,
+            "code": "Kov",
+            "name": "Koval'sky Crater",
+            "type": "crater"
+        },
+        {
+            "idx": 24,
+            "lat": 65.04,
+            "lon": 350.76,
+            "code": "Lom",
+            "name": "Lomonosov Crater",
+            "type": "crater"
+        },
+        {
+            "idx": 25,
+            "lat": -51.96,
+            "lon": 278.5,
+            "code": "Low",
+            "name": "Lowell Crater",
+            "type": "crater"
+        },
+        {
+            "idx": 26,
+            "lat": 50.47,
+            "lon": 29.34,
+            "code": "Lyot",
+            "name": "Lyot Crater",
+            "type": "crater"
+        },
+        {
+            "idx": 27,
+            "lat": -14.01,
+            "lon": 301.41,
+            "code": "Mar",
+            "name": "Valles Marineris",
+            "type": "surface feature"
+        },
+        {
+            "idx": 28,
+            "lat": 54.46,
+            "lon": 213.42,
+            "code": "Mil",
+            "name": "Milankovi\u010d Crater",
+            "type": "crater"
+        },
+        {
+            "idx": 29,
+            "lat": -40.5,
+            "lon": 201.97,
+            "code": "New",
+            "name": "Newton Crater",
+            "type": "crater"
+        },
+        {
+            "idx": 30,
+            "lat": -6.36,
+            "lon": 258.81,
+            "code": "Noc",
+            "name": "Noctis Labyrinthus",
+            "type": "surface feature"
+        },
+        {
+            "idx": 31,
+            "lat": 18.65,
+            "lon": 226.2,
+            "code": "Oly",
+            "name": "Olympus Mons",
+            "type": "surface feature"
+        },
+        {
+            "idx": 32,
+            "lat": -8.45,
+            "lon": 302.18,
+            "code": "Oph",
+            "name": "Ophir Planum",
+            "type": "surface feature"
+        },
+        {
+            "idx": 33,
+            "lat": 18.3,
+            "lon": -24.5,
+            "code": "Oxia",
+            "name": "Oxia Planum",
+            "type": "surface feature"
+        },
+        {
+            "idx": 34,
+            "lat": 1.48,
+            "lon": 247.04,
+            "code": "Pav",
+            "name": "Pavonis Mons",
+            "type": "surface feature"
+        },
+        {
+            "idx": 35,
+            "lat": -2.71,
+            "lon": 16.77,
+            "code": "Sch",
+            "name": "Schiaparelli Crater",
+            "type": "crater"
+        },
+        {
+            "idx": 36,
+            "lat": -13.72,
+            "lon": 272.24,
+            "code": "Sin",
+            "name": "Sinai Planum",
+            "type": "surface feature"
+        },
+        {
+            "idx": 37,
+            "lat": -26.4,
+            "lon": 270.33,
+            "code": "Sol",
+            "name": "Solis Planum",
+            "type": "surface feature"
+        },
+        {
+            "idx": 38,
+            "lat": 9.88,
+            "lon": 70,
+            "code": "Syr",
+            "name": "Syrtis Major",
+            "type": "surface feature"
+        },
+        {
+            "idx": 39,
+            "lat": -13.28,
+            "lon": 35.93,
+            "code": "Tik",
+            "name": "Tikhonravov Crater",
+            "type": "crater"
+        },
+        {
+            "idx": 40,
+            "lat": 46.73,
+            "lon": 117.52,
+            "code": "Utop",
+            "name": "Utopia Planitia",
+            "type": "surface feature"
+        },
+        {
+            "idx": 41,
+            "lat": -13.31,
+            "lon": 171,
+            "code": "Vau",
+            "name": "de Vaucouleurs Crater",
+            "type": "crater"
+        },
+        {
+            "idx": 42,
+            "lat": 18.13,
+            "lon": 305.08,
+            "code": "Xan",
+            "name": "Xanthe Mons",
+            "type": "surface feature"
+        }
+    ]
+}

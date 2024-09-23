@@ -1,0 +1,44 @@
+{
+    "seconds": true,
+    "pulse": true,
+    "interval": 100,
+    "bgimage": true,
+    "tai": 37,
+    "table": true,
+    "switch": false,
+    "locopt": 0,
+    "experiment": 4,
+    "places": 2,
+    "input": {
+        "lat": 70.01,
+        "lon": 100.18
+    },
+    "ntpdiff": 2208988800,
+    "leaptable": {
+        "expires": 3960057600,
+        "index": 0,
+        "count": 1,
+        "leaps": [
+            {
+                "ntptime": 3692217600,
+                "seconds": 37,
+                "expires": 3960057600
+            }
+        ]
+    },
+    "slide": {
+        "slide": true,
+        "nextslide": 0,
+        "interval": 300,
+        "item": 0,
+        "name": ""
+    },
+    "siteinfo": {
+        "idx": 4,
+        "lat": 18.44462715,
+        "lon": 77.45088572,
+        "code": "M20",
+        "name": "Mars Perseverance",
+        "type": "rover"
+    }
+}

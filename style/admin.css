@@ -1,0 +1,233 @@
+body {
+    x-background-color: #303030;
+    x-color: #c0c0c0;
+    x-font-size: 75pt;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+div.admin_topbar {
+	position: absolute;
+	top: 0;
+	left: 0;
+	x-height: 10vh;
+	height: 50px;
+	background-color: #c0c0c0;
+	color: #c0c0c0;
+	width: 100%;
+	margin: 0;
+	padding-top: 0;
+	border-bottom: white 1px;
+}
+div.admin_topbar h1 {
+	margin: 10px;
+	margin-top: 5;
+	font-size: 30px;
+    text-shadow: -1px -1px 0 #000,
+        2px -1px 0 #000,
+        -1px 1px 0 #000,
+        1px 1px 0 #000,
+        3px 3px 5px #000;
+
+}
+div.admin_footer {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	x-height: 7vw;
+	height: 40px;
+	background-color: #c0c0c0;
+	color: amber;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	border-top: solid white 1px;
+}
+
+
+div.admin_content {
+	position: absolute;
+	top: 10vw;
+	left: 0;
+	height: 100%;
+	width: 100vw;
+	border-top: solid white 1px;
+	x-color: amber;
+	margin: 5px;
+	font-size: 12pt;
+}
+
+
+.button {
+    width: 70px;
+    font-size: 12px;
+}
+
+button.admin_return {
+    position: absolute;
+    top: 10px;
+    left: calc(100% - 90px);
+}
+button.admin_shutdown {
+    position: absolute;
+    top: 10px;
+    left: calc(100% - 170px);
+}
+
+button.admin_close {
+    position: absolute;
+    top: 10px;
+    left: calc(100% - 250px);
+}
+
+div.div_mclock {
+	position: absolute;
+	top: 10px;
+	left: 10px;
+	width: 100px;
+	border: solid 1px black;
+	padding: 10px;
+}
+div.mclock_title {
+	position: absolute;
+	top: -10px;
+	width: 105px;
+	background-color: #fff;
+}
+
+div.div_selector {
+	position: absolute;
+	top: 10px;
+	x-left: 200px;
+	left: 140px;
+	width: 150px;
+	border: solid 1px black;
+	padding: 10px;
+}
+div.selector_title {
+	position: absolute;
+	top: -10px;
+	width: 100px;
+	background-color: #fff;
+}
+
+div.div_opts {
+	position: absolute;
+	top: 10px;
+	left: 320px;
+	border: solid 1px black;
+	padding: 10px;
+}
+
+div.opts_title {
+	position: absolute;
+	top: -10px;
+	width: 73px;
+	background-color: #fff;
+
+}
+div.stable {
+	position: absolute;
+	top: 75px;
+	left: 10px;
+}
+
+div.div_exper {
+	position: absolute;
+	top: 110px;
+	left: 10px;
+	width: 150px;
+	border: solid 1px black;
+	padding: 10px;
+}
+div.exper_title {
+	position: absolute;
+	top: -10px;
+	width: 100px;
+	background-color: #fff;
+}
+
+div.div_places {
+	position: absolute;
+	top: 110px;
+	left: 200px;
+	width: 170px;
+	border: solid 1px black;
+	padding: 10px;
+}
+div.places_title {
+	position: absolute;
+	top: -10px;
+	width: 100px;
+	background-color: #fff;
+}
+
+.fsubmit {
+	position: absolute;
+	top: 170px;
+	width: 100px;
+	left: calc(100% - 175px);
+
+}
+.bsubmit {
+	position: absolute;
+	top: 10px;
+	width: 100px;
+	x-left: calc(100% - 175px);
+	left: 10px;
+}
+
+.latv, .lonv {
+	position: absolute;
+	top: 0px;
+	left: -60px;
+	x-width: 50px;	
+}
+.lonv {
+	top: 20px;
+}
+.slidecontainer {
+	position: absolute;
+	top: 170px;
+	left: 70px;
+	x-width: 90px;
+	width: 100%; /* Width of the outside container */
+	x-border: solid 1px #000;
+}
+
+/* The slider itself */
+.slider {
+  -webkit-appearance: none;  /* Override default CSS styles */
+  appearance: none;
+  width: 73vw; /* Full-width */
+  height: 10px; /* Specified height */
+  border-radius: 5px;
+  background: #d3d3d3; /* Grey background */
+  outline: none; /* Remove outline */
+  opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
+  -webkit-transition: .2s; /* 0.2 seconds transition on hover */
+  transition: opacity .2s;
+}
+
+/* Mouse-over effects */
+.slider:hover {
+  opacity: 1; /* Fully shown on mouse-over */
+}
+
+/* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none; /* Override default look */
+  appearance: none;
+  width: 12px; /* Set a specific slider handle width */
+  height: 12px; /* Slider handle height */
+  background: #04AA6D; /* Green background */
+  cursor: pointer; /* Cursor on hover */
+}
+
+.slider::-moz-range-thumb {
+  width: 12px; /* Set a specific slider handle width */
+  height: 12px; /* Slider handle height */
+  background: #04AA6D; /* Green background */
+  cursor: pointer; /* Cursor on hover */
+}
