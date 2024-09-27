@@ -81,13 +81,13 @@ button.admin_close {
     left: calc(100% - 250px);
 }
 
-language_label {
+.language_label {
 	position: absolute;
 	top: 0;
 	left: 0;
 }
 
-language_selector {
+.language_selector {
 	position: absolute;
 	top: 0;
 	left: 50px;
