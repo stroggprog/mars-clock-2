@@ -1,5 +1,10 @@
 /data
 /images/slides
 /admin/form_data.txt
+/style
+/lang
 test.sh
-
+restore
+commit-text.txt
+head_data
+/sys/head_data

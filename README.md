@@ -5,6 +5,7 @@ This is a complete rewrite of the original [marsclock](https://github.com/strogg
 3. Simplify framework by ridding Electron and Nodejs
 4. Can be displayed and configured on a phone (requires network access to machine hosting the clock)
 5. Create a slideshow of background images
+6. Provide external menu system to manage clock software
 
 The application runs as a simple web application, backended by _lighttpd_ and PHP, and front-ended by _firefox_ or _chromium-browser_ in kiosk mode, with most of the work performed in the browser via javascript.
 
@@ -16,8 +17,22 @@ This configuration makes it much simpler to maintain, and easier to fork so you 
 
 The detailed instructions tell you how to prepare your Raspberry Pi for installing the clock, whether you are using an `MHS35 3.5" TFT Touchscreen` or an `Official 7" Touchscreen`.
 
-Installation and maintenance of the clock is simplified by a comprehensive set of scripts fronted by a whiptail menu system, making installing, uninstalling, repairing and updating the clock as simple as possible. Once the RPI has been prepared (browser installed etc - see [Installation Instructions](docs/README.md)), just clone the repository and run `./menu.sh` from the root of the repository.
-
 ![mars-clock-2 running on an MHS35 3.5“ screen](/images/mars-clock2b.png)
 
+![configuration options](/images/mars-clock2c.png)
+
+Installation and maintenance of the clock is simplified by a comprehensive set of scripts fronted by a whiptail menu system, making installing, uninstalling, repairing and updating the clock as simple as possible. Once the RPI has been prepared (browser installed etc - see [Installation Instructions](docs/README.md)), just clone the repository and run `./menu` from the root of the repository.
+
+![mars-clock-2 whiptail menu system](/images/mars-clock2d.png)
+
+The menu system automatically checks for and downloads any updates and alerts you if the upstream repository is newer, or if the local repo has been updated and the clock needs updating - this final step is left up to you so you have some control over the process.
+
+I have chosen to use a rolling-release paradigm rather than a point-release, hence there are no 'releases' available. A consequence of this is that each update must be backwardly-compatible with earlier updates. Therefore, if there are any breaking changes, the update system will correctly manage the transfer between an old, incompatible release and the new one.
+
+On each push to the furthest-upstream repository (https://github.com/stroggprog/mars-clock-2), a new tag will be created in the format of a release e.g. "1.0.4".
+
 [Installation Instructions](docs/README.md)
+
+[Clock Usage Instructions](docs/USAGE.md)
+
+[Installer Menu Usage Instructions](docs/MENU.md)

@@ -30,14 +30,26 @@ function makeRow( $aData ){
 }
 
 $langjson = json_decode( file_get_contents("data/language.json"), false );
-$lang = $langjson->language;
+$language = $langjson->language;
+// load default language file
+// with the defaults loaded, any other language file doesn't have to be complete
+//
+
+$lang = array();
+include_once("lang/settings.php"); 		// initialise array and sub-arrays
+include_once("lang/en/settings.php");	// populate with default data (english)
+if( $language != "en" && is_file("lang/$language/settings.php") ){
+	include_once("lang/$language/settings.php");	// populate with partial or full optional language
+}
 ?>
-<html lang="<?php echo $lang;?>">
+<html lang="<?php echo $language;?>">
 <head>
 	<!-- default skin is skin1 -->
 	<link id=hstyle rel="stylesheet" href="style/global.css" type="text/css" />
 	<script>
 		<?php
+			//echo "let lango = $lang;\n";
+
 			$files = "";
 			$fc = 0;
 			$idir = __DIR__."/images/slides";
@@ -52,7 +64,7 @@ $lang = $langjson->language;
 					$files .= '"'.$entry.'"';
 				}
 			}
-			echo "let slideDir = '/images/slides/'\n";
+			echo "let slideDir = '/images/slides/';\n";
 			echo "let slides = [$files];\n";
 			//$siteInfo = "Lorem Ipsum has been the industry's standard dummy text ever since the 1500s";
 			$skin = file_get_contents($dataDir."skin.json");
@@ -62,13 +74,13 @@ $lang = $langjson->language;
 
 			$rows = array();
 			$blank = !$skin->table;
-			$rows[] = makeRow( array(cell( "Code", "class=left", $blank, $site->code), cell( $site->code, "class=right", $blank, $site->code )) );
-			$rows[] = makeRow( array(cell( "Name", "class=left", $blank, $site->name), cell( $site->name, "class=right", $blank, $site->name )) );
-			$rows[] = makeRow( array(cell( "Type", "class=left", $blank, $site->type), cell( $site->type, "class=right", $blank, $site->type )) );
-			$rows[] = makeRow( array(cell( "Lat" , "class=left", $blank, $site->lat), cell( $site->lat , "class=right", $blank, $site->lat )) );
-			$rows[] = makeRow( array(cell( "Lon" , "class=left", $blank, $site->lon), cell( $site->lon , "class=right", $blank, $site->lon )) );
+			$rows[] = makeRow( array(cell( $lang['clock']['code'], "class=left", $blank, $site->code), cell( $site->code, "class=right", $blank, $site->code )) );
+			$rows[] = makeRow( array(cell( $lang['clock']['name'], "class=left", $blank, $site->name), cell( $site->name, "class=right", $blank, $site->name )) );
+			$rows[] = makeRow( array(cell( $lang['clock']['type'], "class=left", $blank, $site->type), cell( $site->type, "class=right", $blank, $site->type )) );
+			$rows[] = makeRow( array(cell( $lang['clock']['lat'] , "class=left", $blank, $site->lat), cell( $site->lat , "class=right", $blank, $site->lat )) );
+			$rows[] = makeRow( array(cell( $lang['clock']['lon'] , "class=left", $blank, $site->lon), cell( $site->lon , "class=right", $blank, $site->lon )) );
 
-			$rows[] = makeRow( array(cell( "L<sub>S</sub>", "class=left", false, "1" ),cell( "", "id=lsubs class=right", false, "1")) );
+			$rows[] = makeRow( array(cell( $lang['clock']['ls'], "class=left", false, "1" ),cell( "", "id=lsubs class=right", false, "1")) );
 
 		?>
 	</script>

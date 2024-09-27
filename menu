@@ -1,0 +1,116 @@
+#!/bin/bash
+RUN_COUNT=0
+if [ "$(id -u)" -ne 0 ]; then
+    # force run as sudo
+    sudo $0
+else
+    if [ ! -d .git ]; then
+        echo "Please run './menu.sh' in the root of the repository"
+        exit 1
+    fi
+    RUN_COUNT=1
+fi
+
+version_check () {
+    # config default colours for whiptail system
+    # ensures same colors on DietPi, Ubuntu and Mint
+    newt="root=,blue"
+
+    #OLD_VERSION="$(git show HEAD | grep "Date:" | cut -b9-)"
+    sys/git_check.sh
+    GIT_CHECK=$?
+    if [ "$GIT_CHECK" -eq 4 ]; then
+        INFO_MSG=" There is an update to download (select any option to fetch it)"
+    else
+        GIT_LOCAL="$(git show HEAD | grep "commit" | cut -f2 -d' ')"
+        if [ ! -f ./sys/head_data ]; then
+            echo "$GIT_LOCAL" > ./sys/head_data
+        fi
+        GIT_WWW="$GIT_LOCAL"
+        if [ -f /var/www/sys/head_data ]; then
+            GIT_WWW=$(</var/www/sys/head_data)
+        else
+            GIT_WWW="undone"
+        fi
+        if [ "$GIT_LOCAL" == "$GIT_WWW" ]; then
+            INFO_MSG=" Local repository and Clock are up to date"
+        else
+            INFO_MSG=" Clock needs updating: Select Update "
+            newt="root=,blue:roottext=white,red"
+        fi
+    fi
+    export NEWT_COLORS="$newt"
+}
+
+if [ $RUN_COUNT -gt 0 ]; then
+    RESULT="undecided"
+    while [ -n "$RESULT" ]; do
+        # version_check calls git_check.sh which only downloads update info
+        # not the entire update, so a safe call to make on each loop
+        # we still won't do it often enough to be annoying and allows us to keep
+        # the version info in the top-left of the menu up to date
+        version_check
+
+        result=$(
+        whiptail --title "Mars-Clock-2 Setup" --menu "Choose an option" \
+                    --cancel-button "Quit" --backtitle "$INFO_MSG" 14 48 6 \
+            "1" "Install"   \
+            "2" "Repair"  \
+            "3" "Update" \
+            "4" "Uninstall" \
+            "5" "Manage Images" \
+            "6" "Shutdown Browser" 3>&2 2>&1 1>&3
+        )
+        if [ "$result" = "" ]; then
+            exit 0;
+        else
+            RESULT=$result
+        fi
+
+        if [ $RESULT -gt 0 ]; then
+            # if 0, we are up to date
+            # if 1, serious error, we didn't allow for a value of 1
+            # if 2, local and remote have diverged
+            # if 3, local repo has updates that need to be pushed to remote
+            # if 4, we need to pull from origin
+            #
+            # only 4 and 0 are valid to continue as the others equate to an error
+            # that the user must rectify themselves
+            #
+            if [ "$GIT_CHECK" -eq 4 ]; then
+                echo "Pulling..."
+                git pull
+                if [ $? -ne 0 ]; then
+                    echo "An error has occurred, please investigate."
+                    exit 1;
+                fi
+            elif [ "$GIT_CHECK" -eq 3 ] && [ -n "$STROGGCREDS" ]; then
+                # do something uninteresting, there are commits waiting to be pushed we need to ignore
+                # should only apply on the author's rig
+                MC2_OPT="nada"
+            elif [ "$GIT_CHECK" -ne 0 ]; then
+                exit 1
+            fi
+            export MENU_CALLER=$0
+            if [ $RESULT -eq 1 ]; then
+                export MC2_OPT="install"
+                sys/install.sh
+            elif [ "$RESULT" -eq 2 ]; then
+                export MC2_OPT="repair"
+                sys/repair.sh
+            elif [ "$RESULT" -eq 3 ]; then
+                export MC2_OPT="update"
+                sys/update.sh
+            elif [ "$RESULT" -eq 4 ]; then
+                export MC2_OPT="uninstall"
+                sys/uninstall.sh
+            elif [ "$RESULT" -eq 5 ]; then
+                export MC2_OPT="images"
+                sys/images.sh
+            elif [ "$RESULT" -eq 6 ]; then
+                export MC2_OPT="killswitch"
+                sys/killswitch.sh
+            fi
+        fi
+    done
+fi

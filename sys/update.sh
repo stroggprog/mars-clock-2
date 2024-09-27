@@ -1,8 +1,7 @@
-if [ "$(id -u)" -ne 0 ] || [ "$MC2_OPT" != "3" ]; then
+if [ "$(id -u)" -ne 0 ] || [ "$MC2_OPT" != "update" ]; then
     echo "Please run './menu.sh' in the root of the repository"
     exit 1
 fi
-echo "Performing update"
 # sub-update
 sys/sub_update.sh
 

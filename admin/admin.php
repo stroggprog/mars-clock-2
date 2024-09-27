@@ -30,9 +30,35 @@ function makeRow( $aData ){
 }
 
 $langjson = json_decode( file_get_contents("../data/language.json"), false );
-$lang = $langjson->language;
+$language = $langjson->language;
+$lang = array();
+include_once("../lang/settings.php"); 		// initialise array and sub-arrays
+include_once("../lang/en/settings.php");	// populate with default data (english)
+if( $language != "en" && is_file("lang/$language/settings.php") ){
+	include_once("../lang/$language/settings.php");	// populate with partial or full optional language
+}
+
+// get list of language files
+$lset = array();
+$path = "../lang";
+if( $dh = opendir($path) ){
+	while( false !== ( $entry = readdir( $dh ) ) ){
+		if( is_dir("$path/$entry") ){
+			if( $entry != "." && $entry != ".." ){
+				if( file_exists("$path/$entry/settings.php") ){
+					$lset[] = $entry;
+				}
+			}
+		}
+	}
+}
+else {
+	$lset[] = "Error";
+}
+
+
 ?>
-<html lang="<?php echo $lang;?>">
+<html lang="<?php echo $language;?>">
 <head>
 	<!-- default skin is skin1 -->
 
@@ -43,6 +69,7 @@ $lang = $langjson->language;
 		<?php
 			include_once("admin_common.php");
 			global $skin, $missions, $places;
+			echo "let language_options = ". json_encode($lset);
 
 		?>
 	</script>
@@ -56,26 +83,26 @@ $lang = $langjson->language;
 <div class=admin_content>
 		
 		<div class=div_mclock>
-			<div class=mclock_title>&nbsp;Main Clock</div>
-			<input type=radio name=rsw_mars id=mars value=0 <?php if(!$skin->switch) echo "checked";?>> <label for=mars>Mars</label><br>
-			<input type=radio name=rsw_mars id=earth value=1 <?php if($skin->switch) echo "checked";?>> <label for=earth>Earth</label>
+			<div class=mclock_title>&nbsp;<?php echo $lang['admin']['titles']['main_clock'];?></div>
+			<input type=radio name=rsw_mars id=mars value=0 <?php if(!$skin->switch) echo "checked";?>> <label for=mars><?php echo $lang['admin']['main_clock']['mars'];?></label><br>
+			<input type=radio name=rsw_mars id=earth value=1 <?php if($skin->switch) echo "checked";?>> <label for=earth><?php echo $lang['admin']['main_clock']['earth'];?></label>
 		</div>
 
 		<div class=div_selector>
-			<div class=selector_title>&nbsp;Clock from</div>
-			<input type=radio name=locopt id=loco_opt0 value=0 <?php if($skin->locopt == 0) echo "checked";?>> <label for=loco_opt0>Experiment</label><br>
-			<input type=radio name=locopt id=loco_opt1 value=1 <?php if($skin->locopt == 1) echo "checked";?>> <label for=loco_opt1>Location</label><br>
-			<input type=radio name=locopt id=loco_opt2 value=2 <?php if($skin->locopt == 2) echo "checked";?>> <label for=loco_opt2>Coordinates</label>
+			<div class=selector_title>&nbsp;<?php echo $lang['admin']['titles']['clock_from'];?></div>
+			<input type=radio name=locopt id=loco_opt0 value=0 <?php if($skin->locopt == 0) echo "checked";?>> <label for=loco_opt0><?php echo $lang['admin']['clock_from']['experiment'];?></label><br>
+			<input type=radio name=locopt id=loco_opt1 value=1 <?php if($skin->locopt == 1) echo "checked";?>> <label for=loco_opt1><?php echo $lang['admin']['clock_from']['location'];?></label><br>
+			<input type=radio name=locopt id=loco_opt2 value=2 <?php if($skin->locopt == 2) echo "checked";?>> <label for=loco_opt2><?php echo $lang['admin']['clock_from']['coordinates'];?></label>
 		</div>
 
 		<div class=div_opts>
-			<div class=opts_title>&nbsp;Options</div>
-			<input type=checkbox name=stable id=stable value="on" <?php if( $skin->table ) echo "checked";?>> <label for=stable>Info</label><br>
-			<input type=checkbox name=seconds id=seconds value="on" <?php if( $skin->seconds ) echo "checked";?>> <label for=seconds>Seconds</label><br>
+			<div class=opts_title>&nbsp;<?php echo $lang['admin']['titles']['options'];?></div>
+			<input type=checkbox name=stable id=stable value="on" <?php if( $skin->table ) echo "checked";?>> <label for=stable><?php echo $lang['admin']['options']['info'];?></label><br>
+			<input type=checkbox name=seconds id=seconds value="on" <?php if( $skin->seconds ) echo "checked";?>> <label for=seconds><?php echo $lang['admin']['options']['seconds'];?></label><br>
 		</div>
 
 		<div class=div_exper>
-			<div class=exper_title>&nbsp;Experiments</div>
+			<div class=exper_title>&nbsp;<?php echo $lang['admin']['titles']['experiments'];?></div>
 			<select name=exper id=exper class="selector exper">
 				<?php
 					foreach( $missions as $m ){
@@ -87,7 +114,7 @@ $lang = $langjson->language;
 		</div>
 
 		<div class=div_places>
-			<div class=places_title>&nbsp;Locations</div>
+			<div class=places_title>&nbsp;<?php echo $lang['admin']['titles']['locations'];?></div>
 			<select name=places id=places class="selector places">
 				<?php
 					foreach( $places as $m ){
@@ -100,11 +127,11 @@ $lang = $langjson->language;
 		<div class="slidecontainer">
 			<div class=latv id=latv>60</div>
   			<input name=lat type="range" min="0.00" step="0.01" max="360" value="<?php echo $skin->input->lat;?>" class="slider" id="latitude">
-  			<label for=latitude>Lat</label>
+  			<label for=latitude><?php echo $lang['admin']['slider']['lat'];?></label>
   			<br>
 			<div class=lonv id=lonv>80</div>
   			<input name=lon type="range" min="0.00" step="0.01" max="360" value="<?php echo $skin->input->lon;?>" class="slider" id="longitude">
-  			<label for=longitude>Lon</label>
+  			<label for=longitude><?php echo $lang['admin']['slider']['lon'];?></label>
 		</div>
 
 		<div class=fsubmit>
@@ -112,9 +139,26 @@ $lang = $langjson->language;
 
 </div>
 <div class=admin_footer>
-	<input type=submit name="button" class="button bsubmit" value="Save Changes">
-    <button id="options" name="button" class="button admin_return" onClick="location.href = '/index.php';" value="options">Return</button> &nbsp; &nbsp;
-    <button id="shutdown" name="button" class="button admin_shutdown" onClick="location.href = '/admin/shutdown.php';" value="shutdown">Power</button>
+	<input type=submit name="button" class="button bsubmit" value="<?php echo $lang['admin']['button']['save'];?>">
+
+	<div class=language_div>
+    <label for="language" class="language_label"><?php echo $lang['admin']['lang'];?> &nbsp;</label><select name=language id=language class="language_selector">
+    
+    	<?php
+    		foreach( $lset as $opt ){
+    			$e = $opt == $language ? " selected" : "";
+    			echo "<option value=\"$opt\"$e>$opt</option>\n";
+    		}
+    	?>
+    	
+    </select>
+	</div>
+
+
+    <button id="options" name="button" class="button admin_return" onClick="location.href = '/index.php';" value="options"><?php echo $lang['admin']['button']['return'];?></button> &nbsp; &nbsp;
+    <button id="shutdown" name="button" class="button admin_shutdown" onClick="location.href = '/admin/shutdown.php';" value="shutdown"><?php echo $lang['admin']['button']['power'];?></button>
+    
+
 </div>
 </form>
 <script>

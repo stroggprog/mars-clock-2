@@ -1,4 +1,4 @@
-if [ "$(id -u)" -ne 0 ] || [ "$MC2_OPT" != "4" ] || [ ! -d ./.git ]; then
+if [ "$(id -u)" -ne 0 ] || [ "$MC2_OPT" != "uninstall" ] || [ ! -d ./.git ]; then
     echo "Please run './menu.sh' in the root of the repository"
     exit 1
 fi

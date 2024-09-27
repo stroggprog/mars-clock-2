@@ -7,6 +7,8 @@ This folder contains applets to massage data.
   - lang-builder.php
   - leap_seconds.sh and leap_seconds.php
 
+There are also additional scripts invoked by the menu system to install, update, repair and manage the clock. These scripts will not be discussed here, since they have no use outside of the menu system which is discussed in detail in the main documentation.
+
 ## library.php
 contains a debug function and a sorting function used by other scripts in this folder.
 

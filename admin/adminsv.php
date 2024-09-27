@@ -19,6 +19,7 @@ $exper 		= (int)$p->exper;
 $place 		= (int)$p->places;
 $stable 	= $p->stable == "" ? false : true;
 $secs		= $p->seconds == "" ? false : true;
+$language	= $p->language;
 
 // dummy these for now
 $lat = (float)$p->lat;
@@ -69,6 +70,7 @@ else {
 	$skin->siteinfo->lon = $lon;
 }
 
+$langjson->language = $language;
 
 saveSkin();
 
