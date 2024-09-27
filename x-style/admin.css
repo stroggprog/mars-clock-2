@@ -83,15 +83,16 @@ button.admin_close {
 
 .language_label {
 	position: absolute;
-	top: 0;
-	left: 0;
+	x-top: 0;
+	left: 140px;
+	bottom: 10px;
 }
 
 .language_selector {
 	position: absolute;
-	top: 0;
-	left: 50px;
-
+	x-top: 0;
+	left: 190px;
+	bottom: 10px
 }
 div.language_div {
 	position: absolute;

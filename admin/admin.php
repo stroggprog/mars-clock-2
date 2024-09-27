@@ -141,7 +141,7 @@ else {
 <div class=admin_footer>
 	<input type=submit name="button" class="button bsubmit" value="<?php echo $lang['admin']['button']['save'];?>">
 
-	<div class=language_div>
+<!--	<div class=language_div> -->
     <label for="language" class="language_label"><?php echo $lang['admin']['lang'];?> &nbsp;</label><select name=language id=language class="language_selector">
     
     	<?php
@@ -152,7 +152,7 @@ else {
     	?>
     	
     </select>
-	</div>
+<!--	</div> -->
 
 
     <button id="options" name="button" class="button admin_return" onClick="location.href = '/index.php';" value="options"><?php echo $lang['admin']['button']['return'];?></button> &nbsp; &nbsp;
