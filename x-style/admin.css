@@ -81,6 +81,25 @@ button.admin_close {
     left: calc(100% - 250px);
 }
 
+language_label {
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+language_selector {
+	position: absolute;
+	top: 0;
+	left: 50px;
+
+}
+div.language_div {
+	position: absolute;
+	top: 10;
+	left: 140px;
+	height: 50px;
+
+}
 div.div_mclock {
 	position: absolute;
 	top: 10px;
@@ -137,7 +156,7 @@ div.div_exper {
 	position: absolute;
 	top: 110px;
 	left: 10px;
-	width: 150px;
+	width: 170px;
 	border: solid 1px black;
 	padding: 10px;
 }
@@ -151,8 +170,8 @@ div.exper_title {
 div.div_places {
 	position: absolute;
 	top: 110px;
-	left: 200px;
-	width: 170px;
+	left: 220px;
+	width: 180px;
 	border: solid 1px black;
 	padding: 10px;
 }
@@ -177,6 +196,7 @@ div.places_title {
 	x-left: calc(100% - 175px);
 	left: 10px;
 }
+
 
 .latv, .lonv {
 	position: absolute;
