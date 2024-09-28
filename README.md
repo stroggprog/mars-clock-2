@@ -29,7 +29,9 @@ The menu system automatically checks for and downloads any updates and alerts yo
 
 I have chosen to use a rolling-release paradigm rather than a point-release, hence there are no 'releases' available. A consequence of this is that each update must be backwardly-compatible with earlier updates. Therefore, if there are any breaking changes, the update system will correctly manage the transfer between an old, incompatible release and the new one.
 
-On each push to the furthest-upstream repository (https://github.com/stroggprog/mars-clock-2), a new tag will be created in the format of a release e.g. "1.0.4".
+At various times when there has been a number of updates or a major enhancement/change has taken place on the furthest-upstream repository (https://github.com/stroggprog/mars-clock-2), a new tag will be created in the format of a release e.g. "1.0.4".
+
+I've been asked by what 'furthest-upstream repository' means. I have a ForgeJo repo system on my intranet. I push to that, it pushes to GitHub. It also has the capability to push to other sites, which I may do in the future, but at the moment I don't see the point.
 
 [Installation Instructions](docs/README.md)
 
