@@ -80,7 +80,7 @@ if( $language != "en" && is_file("lang/$language/settings.php") ){
 			$rows[] = makeRow( array(cell( $lang['clock']['lat'] , "class=left", $blank, $site->lat), cell( $site->lat , "class=right", $blank, $site->lat )) );
 			$rows[] = makeRow( array(cell( $lang['clock']['lon'] , "class=left", $blank, $site->lon), cell( $site->lon , "class=right", $blank, $site->lon )) );
 
-			$rows[] = makeRow( array(cell( $lang['clock']['ls'], "class=left", false, "1" ),cell( "", "id=lsubs class=right", false, "1")) );
+			$rows[] = makeRow( array(cell( $lang['clock']['ls'], "class=left", !$skin->lsubs, "1" ),cell( "", "id=lsubs class=right", !$skin->lsubs, "1")) );
 
 		?>
 	</script>

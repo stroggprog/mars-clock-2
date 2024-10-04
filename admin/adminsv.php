@@ -19,6 +19,7 @@ $exper 		= (int)$p->exper;
 $place 		= (int)$p->places;
 $stable 	= $p->stable == "" ? false : true;
 $secs		= $p->seconds == "" ? false : true;
+$lsubs		= $p->lsubs == "" ? false : true;
 $language	= $p->language;
 
 // dummy these for now
@@ -29,6 +30,7 @@ $data = "rsw_mars=$rsw_mars\n".
 		"locopt=$locopt\n".
 		"stable=$stable\n".
 		"seconds=$secs\n".
+		"lsubs=$lsubs\n".
 		"exper=$exper\n".
 		"places=$place\n".
 		"lat=$lat\n".
@@ -44,6 +46,9 @@ $skin->table = $stable;
 
 // whether seconds are displayed
 $skin->seconds = $secs;
+
+// whether lsubs and minor clock are displayed
+$skin->lsubs = $lsubs;
 
 // record indexes of experiment and places files even if we don't use them
 $skin->experiment = $exper;

@@ -5,6 +5,7 @@
     "bgimage": true,
     "tai": 37,
     "table": true,
+    "lsubs": true,
     "switch": false,
     "locopt": 0,
     "experiment": 4,

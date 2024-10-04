@@ -27,6 +27,7 @@ $lang['admin']['clock_from']['coordinates'] = 'Coordinates';
 
 $lang['admin']['options']['info'] 		= 'Info';
 $lang['admin']['options']['seconds'] 	= 'Seconds';
+$lang['admin']['options']['lsubs'] 		= 'L<sub>s</sub>/clock';
 
 $lang['admin']['slider']['lat'] = 'Lat';
 $lang['admin']['slider']['lon'] = 'Lon';

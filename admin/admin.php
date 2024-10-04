@@ -99,6 +99,8 @@ else {
 			<div class=opts_title>&nbsp;<?php echo $lang['admin']['titles']['options'];?></div>
 			<input type=checkbox name=stable id=stable value="on" <?php if( $skin->table ) echo "checked";?>> <label for=stable><?php echo $lang['admin']['options']['info'];?></label><br>
 			<input type=checkbox name=seconds id=seconds value="on" <?php if( $skin->seconds ) echo "checked";?>> <label for=seconds><?php echo $lang['admin']['options']['seconds'];?></label><br>
+			<input type=checkbox name=lsubs id=lsubs value="on" <?php if( $skin->lsubs ) echo "checked";?>> <label for=lsubs><?php echo $lang['admin']['options']['lsubs'];?></label><br>
+
 		</div>
 
 		<div class=div_exper>

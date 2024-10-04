@@ -66,7 +66,7 @@ function longitude_time() {
     t = r[0];
     var lsubs = r[1];
     debug1 = 'L<sub>S</sub>: '+r[1];
-    lsubsEl.innerHTML = lsubs;
+
     var time1 = secs2Time(tzOffset);
     var time2 = secs2Time( t % 86400 );
     var marker = " e";
@@ -76,6 +76,16 @@ function longitude_time() {
     		time2 = t1;
     		marker = " m";
     }
+
+    // lsubs and minor clock display
+    if( !skin.lsubs ){
+    	lsubs = "&nbsp;";
+    	time1 = "&nbsp;";
+    	marker = "&nbsp;";
+    }
+
+    lsubsEl.innerHTML = lsubs;
+
     timeEl.innerHTML = '<span class=tiny1>'+time1+marker+'</span><br><span class=time>'+time2+'</span><br>'+
     										'<span class=tiny2> &nbsp; </span>';
 }
