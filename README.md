@@ -5,7 +5,7 @@ This is a complete rewrite of the original [marsclock](https://github.com/strogg
 3. Simplify framework by ridding Electron and Nodejs
 4. Can be displayed and configured on a phone (requires network access to machine hosting the clock)
 5. Create a slideshow of background images
-6. Provide external menu system to manage clock software
+6. Provide external menu system to manage clock software and images
 
 The application runs as a simple web application, backended by _lighttpd_ and PHP, and front-ended by _firefox_ or _chromium-browser_ in kiosk mode, with most of the work performed in the browser via javascript.
 
