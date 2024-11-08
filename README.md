@@ -38,3 +38,6 @@ I've been asked by what 'furthest-upstream repository' means. I have a ForgeJo r
 [Clock Usage Instructions](docs/USAGE.md)
 
 [Installer Menu Usage Instructions](docs/MENU.md)
+
+[When to Reboot the Clock](docs/REBOOTING.md)
+
