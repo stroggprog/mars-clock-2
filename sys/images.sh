@@ -50,6 +50,7 @@ delete_images () {
             diff_slides="$(($active_slides - $recount_slides))"
             echo "$diff_slides deleted"
             echo "$recount_slides remaining"
+            refresh_msg
         else
             echo "Aborting 'Delete Images'"
         fi
@@ -68,6 +69,7 @@ restore_default_slides () {
             cp -n /var/www/x-slide/* /var/www/images/slides/
             change_owner_wwww
             echo "$default_slides copied (existing files were skipped)"
+            refresh_msg
         fi
     fi
     press_any_key
@@ -91,11 +93,15 @@ copy_user_images () {
             echo "$copied_files copied"
             echo "$not_copied skipped (already in slides folder)"
             echo "There are now $new_active_slides images in the slides folder"
+            refresh_msg
         fi
     fi
     press_any_key
 }
 
+refresh_msg () {
+    echo "NOTE: Please refresh the clock by opening the admin screen and returning"
+}
 
 RESULT="undecided"
 while [ -n "$RESULT" ]; do
