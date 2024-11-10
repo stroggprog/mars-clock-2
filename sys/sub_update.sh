@@ -13,13 +13,13 @@ cp -r . /var/www
 mv /var/www/sys/leap_seconds.sh /var/www/admin/leap_seconds.sh
 
 # remove everything that's not needed
-rm /var/www/*.sh
+rm -f /var/www/*.sh
 rm /var/www/menu
 rm /var/www/.gitignore
 rm /var/www/LICENCE
-rm /var/www/restore
+rm -f /var/www/restore
 rm /var/www/*.md
-rm /var/www/*.txt
+rm -f /var/www/*.txt
 rm /var/www/sys/*.sh
 rm -r /var/www/.git
 rm -r /var/www/docs
