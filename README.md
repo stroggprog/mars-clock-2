@@ -41,3 +41,4 @@ I've been asked by what 'furthest-upstream repository' means. I have a ForgeJo r
 
 [When to Reboot the Clock](docs/REBOOTING.md)
 
+[Fixing Clock after Kernel Update](docs/KERNEL-UPDATE.md)
